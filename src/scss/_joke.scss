@@ -1,0 +1,83 @@
+.joke {
+  border: 1px solid $emfasizedContent;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  padding: 47px 20px 20px;
+  background: $emfasizedContent;
+  position: relative;
+
+
+  &__wraper {
+    width: 100%;
+  }
+
+  &__mark {
+    background: url('../assets/heartBold.svg') no-repeat;
+    top: 20px;
+    right: 20px;
+    z-index: 0;
+    width: 20px;
+    height: 17px;
+    position: absolute;
+    cursor: pointer;
+
+
+    &--checked {
+      background: url('../assets/heart.svg') no-repeat;
+    }
+  }
+
+  &__check {
+    width: 20px;
+    height: 17px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+  }
+
+  &__text {
+    color: $content;
+    margin: 5px 0 28px;
+    overflow-wrap: anywhere;
+  }
+
+  &__secondary {
+    font-size: 10px;
+    line-height: 14px;
+    color: $secondary;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__id {
+    display: flex;
+  }
+
+  &__img {
+    margin-right: 20px;
+    align-self: start;
+  }
+}
+
+.id {
+  &__value {
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0 5px;
+    color: $bgButton1;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  &__symbol {
+    margin-right: 20px;
+    align-self: start;
+  }
+}

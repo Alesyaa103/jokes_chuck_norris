@@ -1,0 +1,101 @@
+.form-submit {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+
+  &__block {
+    margin: 10px 0;
+    cursor: pointer;
+    position: relative;
+
+    & :checked~.none {
+      display: flex;
+    }
+  }
+
+  &__radio {
+    opacity: 0;
+    margin-right: 15px;
+
+    &:checked+.form-submit__option:after {
+      opacity: 1;
+    }
+  }
+
+  &__search-field {
+    border: 2px solid $content;
+    border-radius: 10px;
+    width: 100%;
+    height: 42px;
+    padding: 10px 15px;
+    margin: 20px 0;
+    &::placeholder {
+      color: $secondary;
+    }
+  }
+
+  &__submit-button {
+    background: linear-gradient(92.01deg, $bgButton1 0%, $bgButton2 100%);
+    border-radius: 10px;
+    color: $fon;
+    padding: 10px 40px;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 16px;
+    line-height: 22px;
+    width: 160px;
+    font-weight: bold;
+  }
+
+  &__option:before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $radioBorder;
+    border-radius: 50%;
+    background: $fon;
+  }
+
+  &__option:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    opacity: 0;
+    transition: .2s;
+  }
+}
+
+.categories {
+  flex-wrap: wrap;
+
+  &__mark {
+    letter-spacing: 2px;
+    font-weight: 500;
+    border-radius: 6px;
+    text-transform: uppercase;
+    background-color: $fon;
+    padding: 6px 20px;
+    color: $content;
+    border: 2px solid $emfasizedContent;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 10px 0;
+  }
+
+  &__radio {
+    opacity: 0;
+    margin-right: 15px;
+
+    &:checked+.categories__mark {
+      background: $emfasizedContent;
+    }
+  }
+}
