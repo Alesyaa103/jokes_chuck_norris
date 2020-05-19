@@ -47,7 +47,7 @@ p {
 .burger {
   display: flex;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
   &__button {
     display: inline-block;
@@ -60,6 +60,15 @@ p {
     height: 28px;
     opacity: 0;
     margin-right: 15px;
+    &:checked~.burger__title::before {
+      transform: rotate(45deg);
+      top: 13px;
+    }
+  
+    &:checked~.burger__title::after {
+      transform: rotate(-45deg);
+      top: 13px;
+    }
   }
 
   &__title {
@@ -84,16 +93,6 @@ p {
     &::after {
       top: 16px;
     }
-  }
-
-  &:checked~.burger__title::before {
-    transform: rotate(45deg);
-    top: 13px;
-  }
-
-  &:checked~.burger__title::after {
-    transform: rotate(-45deg);
-    top: 13px;
   }
 }
 
@@ -138,6 +137,7 @@ p {
   top: 0;
   min-height: 100vh;
   height: 100%;
+  z-index: 2;
 }
 
 .none {

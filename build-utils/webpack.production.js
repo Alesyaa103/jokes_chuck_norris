@@ -17,6 +17,7 @@ module.exports = merge(commonConfig, {
     minimizer: [
       new OptimizeCssAssetsPlugin(),
       new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
         cache: true
       }),
       new HtmlWebpackPlugin({
@@ -32,23 +33,28 @@ module.exports = merge(commonConfig, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "./static/css/[name].[contentHash].css"
+      filename: "./static/css/[name].[contentHash].css",
     }),
   ],
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+        use:[
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/static/css/',
+            },
+          },
+          'css-loader',
+          "sass-loader"
+        ], 
       },
       {
         test: /\.(svg|png|jpg|gif|jpeg|ico)$/,
         use: {
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            outputPath: "/static/assets"
-          }
+          loader: "url-loader"
         }
       },
     ],
