@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config ./build-utils/webpack.development.js --open",
     "build": "webpack --config ./build-utils/webpack.production.js",
     "deploy": "gh-pages -d build"
