@@ -1,6 +1,6 @@
 import swal from 'sweetalert';
 import {
-  fetchFunction
+  fetchForm
 } from './api.helper';
 import {
   templateJoke
@@ -38,7 +38,7 @@ export function getJoke(e) {
     default:
       option = 'random';
   }
-  fetchFunction(option)
+  fetchForm(option)
     .then((res) => {
       res ? displayJoke(res, content, false) : swal({
         text: "Joke wasn't find",

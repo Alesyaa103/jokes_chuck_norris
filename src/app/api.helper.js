@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function fetchFunction(option) {
+export async function fetchForm(option) {
   let jokeContent = null
   try {
     const res = await axios.get(`https://api.chucknorris.io/jokes/${option}`);
