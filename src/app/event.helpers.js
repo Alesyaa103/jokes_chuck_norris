@@ -96,7 +96,7 @@ function changeFavouriteStatus(id, value, categories, lastUpdate, e) {
     }));
 
     const jokes = document.getElementsByClassName(id)
-    if (e.target.parentNode.parentNode.parentNode.parentNode !== saved && jokes.length === 1) {
+    if (e.target.closest('.joke').parentNode !== saved && jokes.length === 1) {
       displayJoke(data, saved, true);
       showAside();
     }
