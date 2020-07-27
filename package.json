@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./build-utils/webpack.development.js --open",
+    "start": "node server.js",
     "build": "webpack --config ./build-utils/webpack.production.js",
     "deploy": "gh-pages -d build"
   },
@@ -43,6 +43,8 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "gh-pages": "^2.2.0",
     "sweetalert": "^2.1.2"
   }
